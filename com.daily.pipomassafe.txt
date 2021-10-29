@@ -11,7 +11,7 @@
 	"admob": "hado dyal admob li taht",
 
 	"AdmobAppId": "ca-app-pub-3940256099942544~3347511713",
-	"interId": "ca-app-pub-3649758406993143/2794770529",
+	"interId": "ca-app-pub-6456855061781076/5361611152",
 	"bannerId": "ca-app-pub-3649758406993143/2794770529",
 	"rewardadmob": "ca-app-pub-3940256099942544/5224354917",
 
