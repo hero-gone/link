@@ -2,12 +2,12 @@
 	"version": "said v12",
 
 "appid": "ca-app-pub-3940256099942544~3347511713",
-"nativeid1": "ca-app-pub-3940256099942544/",
-"nativeid2": "ca-app-pub-3940256099942544/",
-"nativeid3": "ca-app-pub-3940256099942544/",
-"nativeid4": "ca-app-pub-3940256099942544/",
-"nativeid5": "ca-app-pub-3940256099942544/",
-"nativeid6": "ca-app-pub-3940256099942544/",
+"nativeid1": "ca-app-pub-4822230345102785/4604700044",
+"nativeid2": "ca-app-pub-4822230345102785/9895188196",
+"nativeid3": "ca-app-pub-4822230345102785/5955943186",
+"nativeid4": "ca-app-pub-4822230345102785/1661474954",
+"nativeid5": "ca-app-pub-4822230345102785/1661474954",
+"nativeid6": "ca-app-pub-4822230345102785/5409148273",
 
 "switchads  explication": " ina id bghiti ikhdem   .... ila kan randomNativeid =1 switchadsradi disactiva o ikhdem random ",
 
@@ -17,7 +17,7 @@
 
 "randomNativeid": "0",
 
-"adsTimer": "10000"
+"adsTimer": "35"
 
 
 }
