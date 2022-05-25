@@ -2,12 +2,12 @@
 	"version": "Hero",
 
 "appid": "ca-app-pub-3940256099942544~3347511713",
-"nativeid1": "ca-app-pub-6521094951156582/7500505864",
-"nativeid2": "ca-app-pub-6521094951156582/6187424190",
-"nativeid3": "ca-app-pub-6521094951156582/3309145268",
-"nativeid4": "ca-app-pub-6521094951156582/2248179189",
-"nativeid5": "ca-app-pub-6521094951156582/1222037973",
-"nativeid6": "ca-app-pub-6521094951156582/8622015847",
+"nativeid1": "ca-app-pub-3540382918295738/2776233153",
+"nativeid2": "ca-app-pub-3540382918295738/7010991632",
+"nativeid3": "ca-app-pub-3540382918295738/1814257857",
+"nativeid4": "ca-app-pub-3540382918295738/8188094514",
+"nativeid5": "ca-app-pub-3540382918295738/6875012841",
+"nativeid6": "ca-app-pub-3540382918295738/6523906479",
 
 "switchads  explication": " ina id bghiti ikhdem   .... ila kan randomNativeid =1 switchadsradi disactiva o ikhdem random ",
 
@@ -17,7 +17,7 @@
 
 "randomNativeid": "1",
 
-"adsTimer": "10000"
+"adsTimer": "10"
 
 
 }
