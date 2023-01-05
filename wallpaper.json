@@ -1,0 +1,149 @@
+{
+	"version": "v12",
+
+"ironsdk": "4983033",
+"ironbanner": "Banner_Android",
+"ironinter": "Interstitial_Android",
+"ironreward": "Rewarded_Android",
+
+"adscounter": "3",
+
+"CategorieAtxt": "Cars",
+"CategorieBtxt": "NATURE",
+"CategorieCtxt": "ANIMALS",
+"CategorieDtxt": "Mixte",
+
+
+"CategorieA":
+  [
+       {"urlimgA": "https://i.pinimg.com/originals/73/63/87/736387cf544a7084c711b18421cbf245.png"
+    }, {"urlimgA": "https://mobimg.b-cdn.net/v3/fetch/f1/f1c364e97117fe475f352ea55e55d02c.jpeg"
+    }, {"urlimgA": "https://w0.peakpx.com/wallpaper/422/106/HD-wallpaper-merc-c63-be-mercedes-amg-black-car-supercar-sports-america-new-forest.jpg"
+    }, {"urlimgA": "https://wallpapercave.com/wp/wp2990251.jpg"
+    }, {"urlimgA": "https://www.teahub.io/photos/full/100-1002086_lamborghini-wallpaper-4k-for-android.jpg"
+    }, {"urlimgA": "https://cdn.statically.io/img/i.pinimg.com/originals/dc/cd/12/dccd129fa6e7117418889b5cbf16b262.jpg"
+    }, {"urlimgA": "https://64.media.tumblr.com/c7731efaa6df559f8d4fbf11300ff17c/70e40b67114224ae-ba/s1280x1920/de3d4fb5e751f966de5cbd9fd4497cd4bc61b4cd.jpg"
+    }, {"urlimgA": "https://cdn.wallpapersafari.com/74/52/2eMZPA.png"
+    }, {"urlimgA": "https://cdn.wallpapersafari.com/55/28/3sv7SZ.jpg"
+    }, {"urlimgA": "https://www.mordeo.org/files/uploads/2019/04/Audi-Ai-Me-Concept-Cars-2019-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
+    }
+  ],
+
+"CategorieB":
+  [
+       {
+      "urlimgB": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOpicvML5ZMfK83JKnVbOTX7Yvfbs0naYP-gRb0TV17pqSlHMmYfefu7oooAnamjBsZ60&usqp=CAU"
+    }, {
+      "urlimgB": "https://w0.peakpx.com/wallpaper/641/421/HD-wallpaper-nature-summer-mare-best-mobile-nice.jpg"
+    }, {
+      "urlimgB": "https://rare-gallery.com/uploads/posts/336153-Sea-Sunset-Clouds-Horizon-Seascape-Scenery-Nature-4K-3840x2160.jpg"
+    }, {
+      "urlimgB": "https://wallpapercave.com/wp/wp8550928.jpg"
+    }, {
+      "urlimgB": "https://wallpaper.dog/large/20466231.jpg"
+    }, {
+      "urlimgB": "https://wallpaperaccess.com/full/5553487.jpg"
+    }, {
+      "urlimgB": "https://i.pinimg.com/736x/5f/0c/ba/5f0cba55228e7ed1c0865977837f70b4.jpg"
+    }, {
+      "urlimgB": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKfc9MSBWpJIgjjRwYCZXWDCvFolzIGR_b-SvbKDMEd4tEVEErRyyEY1gw9j0F5rQU6Dg&usqp=CAU"
+    }, {
+      "urlimgB": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyt9LsKuX157OfgaLrt0Q3Vcl9Aa1gLxEbX9AwjvQJDcjQr5iNnUNwmTGzMzcurbaqi2E&usqp=CAU"
+    }, {
+      "urlimgB": "https://www.wallpapertip.com/wmimgs/14-144511_beautiful-nature-wallpaper-for-android.jpg"
+    }
+  ],
+  
+  
+  "CategorieC":
+  [
+    {
+      "urlimgC": "https://i.pinimg.com/736x/f1/92/c8/f192c858dddb299d76f730deeef8c4dc.jpg"
+    },{
+      "urlimgC": "https://wallpaper.dog/large/20493380.jpg"
+    },{
+      "urlimgC": "https://wallpapershome.com/images/pages/ico_v/14878.jpg"
+    },
+       { "urlimgC": "https://images.pexels.com/photos/6796539/pexels-photo-6796539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },   { "urlimgC": "https://images.pexels.com/photos/12555762/pexels-photo-12555762.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }, 
+    {  "urlimgC": "https://images.pexels.com/photos/13534070/pexels-photo-13534070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },   { "urlimgC": "https://mfiles.alphacoders.com/587/587271.jpg"
+    },   { "urlimgC": "https://wallpapershome.com/images/pages/ico_v/14878.jpg"
+    },   { "urlimgC": "https://images.pexels.com/photos/8689149/pexels-photo-8689149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },   { "urlimgC": "https://images.pexels.com/photos/4455719/pexels-photo-4455719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "urlimgC": "https://images.pexels.com/photos/5279463/pexels-photo-5279463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  ],
+  
+   "CategorieD":
+  [{
+      "urlimgD": "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1212487/pexels-photo-1212487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1535162/pexels-photo-1535162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1156684/pexels-photo-1156684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1226302/pexels-photo-1226302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1433052/pexels-photo-1433052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/775203/pexels-photo-775203.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1141792/pexels-photo-1141792.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1366630/pexels-photo-1366630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1723637/pexels-photo-1723637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1707215/pexels-photo-1707215.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1257860/pexels-photo-1257860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1097491/pexels-photo-1097491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1366913/pexels-photo-1366913.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1420440/pexels-photo-1420440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1122639/pexels-photo-1122639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/40465/pexels-photo-40465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1367105/pexels-photo-1367105.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/937980/pexels-photo-937980.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1172849/pexels-photo-1172849.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },{
+      "urlimgD": "https://images.pexels.com/photos/1784578/pexels-photo-1784578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  ]
+  
+  
+  
+
+
+
+
+
+
+	
+
+
+
+
+
+}
