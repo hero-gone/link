@@ -1,12 +1,10 @@
 {
 	"version": "v12",
 
-"ironsdk": "4656617",
-"ironbanner": "Banner_Android",
-"ironinter": "Interstitial_Android",
-"ironreward": "Rewarded_Android",
-"admobinter": "ca-app-pub-3940256099942544/6300978111",
-"admobanner": "ca-app-pub-3940256099942544/1033173712",
+"AdmobAppId": "Interstitial_Android",
+"interId": "ca-app-pub-3940256099942544/1033173712",
+"bannerId": "ca-app-pub-3940256099942544/6300978111",
+"rewardadmob": "ca-app-pub-3940256099942544/1033173712",
 
 "adscounter": "3",
 
