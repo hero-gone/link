@@ -1,0 +1,20 @@
+{
+	"version": "said v12",
+
+"appid": "ca-app-pub-3940256099942544~3347511713",
+"nativeid1": "nativeid1",
+"nativeid2": "nativeid2",
+"nativeid3": "nativeid3",
+"nativeid4": "nativeid4",
+"nativeid5": "nativeid5",
+"nativeid6": "nativeid6",
+
+"switchads  explication": " ina id bghiti ikhdem   .... ila kan randomNativeid =1 switchadsradi disactiva o ikhdem random ",
+
+"switchads": "6",
+
+"randomNativeid explication ": "1 : radi isti ads random bin 1 hta 6 /// 0 : radi disactivé random o ikhdem switchads ",
+
+"randomNativeid": "1",
+
+"adsTimer": "10"
