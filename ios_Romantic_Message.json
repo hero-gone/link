@@ -3,7 +3,7 @@
 "version": "v7 08/04/2020",
 "frequence explication": "frequence kithakem f chhal men click iban ads",
 
-		"Frequence": "0",
+		"Frequence": "1",
 		"specificationAds explication ": "0 automatique , 1 admob ,2fan ,3 unity , 4 iron",
 		"specificationAds": "1",
 "rate us explication": "chhal men lancement 3ada iban rate",
@@ -20,8 +20,8 @@
 	"admob": "hado dyal admob li taht",
 
 	"AdmobAppId": "ca-app-pub-3940256099942544~3347511713",
-	"interId": "ca-app-pub-3940256099942544/2934735716",
-	"bannerId": "ca-app-pub-3940256099942544/2934735716",
+	"interId": "ca-app-pub-9972771256234787/7826050320",
+	"bannerId": "ca-app-pub-9972771256234787/9139131996",
 	"rewardadmob": "ca-app-pub-3940256099942544/",
 
 	"facebook": "badal li ltaht ila bghiti facebook",
