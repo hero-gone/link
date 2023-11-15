@@ -1,0 +1,27 @@
+{
+    "vpn": {
+    "activate_vpn": true,
+    "vpn_username": "L42BvTbfPgrozGgHPHhGGFno",
+    "vpn_password": "wfHC1HRBvD6PHvkyQoXhsXgz",
+    "retry_vpn_counter": 40,
+    "vpn_country": "MyApp",
+      "excluded_countries": [
+        "MA"
+    ],
+    "serversList": [
+"https://aabmod.com/ovpn/ovpn/germany/0.ovpn",
+"https://aabmod.com/ovpn/ovpn/germany/1.ovpn",
+"https://aabmod.com/ovpn/ovpn/germany/2.ovpn",
+"https://aabmod.com/ovpn/ovpn/germany/3.ovpn",
+"https://aabmod.com/ovpn/ovpn/germany/4.ovpn",
+"https://aabmod.com/ovpn/ovpn/germany/5.ovpn",
+"https://aabmod.com/ovpn/ovpn/germany/6.ovpn",
+"https://aabmod.com/ovpn/ovpn/germany/7.ovpn",
+"https://aabmod.com/ovpn/ovpn/germany/8.ovpn",
+"https://aabmod.com/ovpn/ovpn/germany/9.ovpn",
+"https://aabmod.com/ovpn/ovpn/germany/10.ovpn"
+
+
+    ]
+  }
+}
