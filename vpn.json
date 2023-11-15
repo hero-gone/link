@@ -3,7 +3,7 @@
     "activate_vpn": false,
     "vpn_username": "L42BvTbfPgrozGgHPHhGGFno",
     "vpn_password": "wfHC1HRBvD6PHvkyQoXhsXgz",
-    "retry_vpn_counter": 40,
+    "retry_vpn_counter": 3,
     "vpn_country": "MyApp",
       "excluded_countries": [
         "MA"
