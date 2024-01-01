@@ -1,2 +1,6 @@
-#EXTINF:-1 group-title="BANGLA" tvg-logo="https://i.imgur.com/T38Oiwl.jpg",EKUSHEY TV [BD]
-https://ekusheyserver.com/etvlivesn.m3u8
+#EXTINF:-1,BBC Two HD
+http://194.76.186.146:8000/play/a029/index.m3u8
+#EXTINF:-1,BBC Two Northern Ireland HD
+http://194.76.186.146:8000/play/a00g/index.m3u8
+#EXTINF:-1,BBC Two Northern Ireland HD
+http://194.76.186.146:8000/play/a00i/index.m3u8
