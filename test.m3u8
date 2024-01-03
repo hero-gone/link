@@ -1,6 +1,2 @@
-#EXTINF:-1,BBC Two HD
-http://194.76.186.146:8000/play/a029/index.m3u8
-#EXTINF:-1,BBC Two Northern Ireland HD
-http://194.76.186.146:8000/play/a00g/index.m3u8
-#EXTINF:-1,BBC Two Northern Ireland HD
-http://194.76.186.146:8000/play/a00i/index.m3u8
+#EXTINF:0 CUID="1" tvg-name="beIN 1 Premium FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/b7/Logo_beIN_SPORTS_MAX.png" group-title="beIN Sports  بي ان سبورت",beIN 1 Premium FHD
+http://173.212.193.243:8080/mo3ad239UY/mo3ad239UY/405
