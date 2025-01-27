@@ -1,0 +1,91 @@
+[
+  {
+    "title": "Whole Wheat Banana Bread",
+    "image": "https://example.com/images/whole-wheat-banana-bread.jpg",
+    "description": "A healthy and moist banana bread made with whole wheat flour and natural sweeteners.",
+    "ingredients": [
+      "2 cups whole wheat flour",
+      "3 ripe bananas, mashed",
+      "1/4 cup honey",
+      "1/4 cup coconut oil, melted",
+      "1 tsp baking soda",
+      "1/2 tsp salt",
+      "1 tsp vanilla extract",
+      "2 large eggs"
+    ],
+    "instructions": [
+      "Preheat the oven to 175°C (350°F) and grease a loaf pan.",
+      "In a large bowl, mix mashed bananas, honey, coconut oil, eggs, and vanilla extract.",
+      "In another bowl, combine whole wheat flour, baking soda, and salt.",
+      "Gradually add the dry ingredients to the wet ingredients, mixing until just combined.",
+      "Pour the batter into the prepared loaf pan and bake for 50-60 minutes.",
+      "Cool completely before slicing and serving."
+    ]
+  },
+  {
+    "title": "Sandwich Bread",
+    "image": "https://img.youtube.com/vi/KRnMB5DvCO4/maxresdefault.jpg",
+    "description": "Forget supermarket sandwich bread, I bring you the perfect recipe for a healthier and much tastier homemade sandwich bread. It is soft as a pillow inside, the crust is thin and crispy, and the rye flour gives it a unique taste! Rustic, flavorful, and so soft, this bread is perfect for epic sandwiches or simply enjoying with butter.",
+    "ingredients": [
+      "⅔ cup (160 ml) water",
+      "1¾ cups (220 g) bread flour",
+      "¾ cup (100 g) rye flour",
+      "¼ cup (60 g) plain yogurt",
+      "1 tsp (3 g) fresh yeast or ½ tsp (2 g) dry yeast",
+      "1 tbsp vegetable oil",
+      "1 tsp (6 g) salt"
+    ],
+    "instructions": [
+      "In a bowl, dissolve the yeast in warm water and let it sit for 5-10 minutes until foamy.",
+      "Add the plain yogurt, vegetable oil, and salt to the yeast mixture and mix well.",
+      "Gradually add the bread flour and rye flour, mixing until a dough forms.",
+      "Knead the dough on a floured surface for about 8-10 minutes until smooth and elastic.",
+      "Place the dough in a greased bowl, cover, and let it rise in a warm place for 1-2 hours until doubled in size.",
+      "Preheat the oven to 180°C (350°F). Shape the dough into a loaf and place it in a greased loaf pan.",
+      "Bake for 30-35 minutes until the crust is golden brown and the loaf sounds hollow when tapped.",
+      "Let cool before slicing and serving."
+    ]
+  },
+  {
+    "title": "The New Perfect 4-Ingredient Bread Recipe",
+    "image": "https://img.youtube.com/vi/zIYZhTjcKmE/maxresdefault.jpg",
+    "description": "This recipe brings together a golden crust, an airy crumb, and that unmistakable aroma that fills your home with joy. Each slice is a reminder of how satisfying homemade bread can be, from the first bite to the last.",
+    "ingredients": [
+      "1 cup (220 ml) water",
+      "¾ tsp (3 g) fresh yeast or ½ tsp (2 g) dry yeast",
+      "2½ cups (320 g) bread flour",
+      "1 tsp (6 g) salt"
+    ],
+    "instructions": [
+      "In a large bowl, dissolve the yeast in warm water and let it sit for 5 minutes until bubbly.",
+      "Mix in the salt and gradually add the bread flour, stirring to form a sticky dough.",
+      "Cover the bowl with a damp cloth and let the dough rise for 1-2 hours until doubled in size.",
+      "Preheat the oven to 200°C (400°F). Lightly flour your hands and shape the dough into a round or oval loaf.",
+      "Place the loaf on a parchment-lined baking sheet and let it rest for 20-30 minutes.",
+      "Bake for 25-30 minutes until the crust is golden brown and the loaf sounds hollow when tapped.",
+      "Cool on a wire rack before slicing and enjoying."
+    ]
+  },
+  {
+    "title": "Poppy Bread",
+    "image": "https://img.youtube.com/vi/7W40_1fBbZ4/maxresdefault.jpg",
+    "description": "Imagine biting into a warm, flaky roll with a crispy crust and a soft, pillowy center. This poppy seed bread is everything you’ve been craving and more! The roasted poppy seeds add a delightful nuttiness, and the aroma while baking will fill your kitchen with pure joy.",
+    "ingredients": [
+      "1 cup (220 ml) water",
+      "¾ tsp (3 g) fresh yeast or ½ tsp (2 g) dry yeast",
+      "2½ cups (320 g) bread flour",
+      "1½ tbsp (15 g) poppy seeds (plus extra for coating)",
+      "1 tsp (6 g) salt"
+    ],
+    "instructions": [
+      "In a bowl, dissolve the yeast in warm water and let it sit for 5-10 minutes until foamy.",
+      "Add the salt and poppy seeds, then gradually mix in the bread flour to form a soft dough.",
+      "Knead the dough on a floured surface for about 8-10 minutes until smooth and elastic.",
+      "Place the dough in a greased bowl, cover, and let it rise for 1-2 hours until doubled in size.",
+      "Preheat the oven to 200°C (400°F). Divide the dough into small portions and shape into rolls.",
+      "Roll each piece in additional poppy seeds for coating and place on a baking sheet.",
+      "Bake for 20-25 minutes until the rolls are golden brown and fragrant.",
+      "Cool slightly before serving."
+    ]
+  }
+]
