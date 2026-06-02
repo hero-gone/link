@@ -1,0 +1,151 @@
+# Central manifest for generating JSON config files.
+# Run `python generate_configs.py` to regenerate all JSON configs from this file.
+#
+# Each template defines shared keys. Per-file entries inherit the template and
+# override only the values that differ.
+
+templates:
+
+  simple_admob:
+    version: "test v1"
+    admob: "hado dyal admob li taht"
+    AdmobAppId: "ca-app-pub-3940256099942544~3347511713"
+    interId: "ca-app-pub-3940256099942544/"
+    bannerId: "ca-app-pub-3940256099942544/"
+    rewardadmob: "ca-app-pub-3940256099942544/"
+
+  webview_native_ads:
+    appid: "ca-app-pub-3940256099942544~3347511713"
+    nativeid1: "ca-app-pub-3940256099942544/"
+    nativeid2: "ca-app-pub-3940256099942544/"
+    nativeid3: "ca-app-pub-3940256099942544/"
+    nativeid4: "ca-app-pub-3940256099942544/"
+    nativeid5: "ca-app-pub-3940256099942544/"
+    nativeid6: "ca-app-pub-3940256099942544/"
+    "switchads  explication": " ina id bghiti ikhdem   .... ila kan randomNativeid =1 switchadsradi disactiva o ikhdem random "
+    switchads: "6"
+    "randomNativeid explication ": "1 : radi isti ads random bin 1 hta 6 /// 0 : radi disactivé random o ikhdem switchads "
+    randomNativeid: "0"
+    adsTimer: "10"
+
+  ios_multi_ad_network:
+    version: "v7 08/04/2020"
+    "frequence explication": "frequence kithakem f chhal men click iban ads"
+    Frequence: "0"
+    "specificationAds explication ": "0 automatique , 1 admob ,2fan ,3 unity , 4 iron"
+    specificationAds: "1"
+    "rate us explication": "chhal men lancement 3ada iban rate"
+    RateUsPop: "2"
+    iron: "badal li ltaht ila bghiti iron"
+    ironId: "e1d8ff01"
+    ironBanner: "DefaultBanner"
+    ironInter: "DefaultInterstitial"
+    ironReward: "DefaultRewardedVideo"
+    admob: "hado dyal admob li taht"
+    AdmobAppId: "ca-app-pub-3940256099942544~3347511713"
+    interId: "ca-app-pub-3940256099942544/"
+    bannerId: "ca-app-pub-3940256099942544/"
+    rewardadmob: "ca-app-pub-3940256099942544/"
+    facebook: "badal li ltaht ila bghiti facebook"
+    FanInter: "436713450827755_440523240446776"
+    FanBanner: "436713450827755_436714014161032"
+    FanReward: "436713450827755_436714164161017"
+    unity: "badal li ltaht ila bghiti unity"
+    UnityAppId: ""
+    UnityInter: "video"
+    Unitybanner: "banner"
+    unityreward: "rewardedVideo"
+
+# ── Per-file configs ─────────────────────────────────────────────────────────
+# "template" selects which shared base to use.
+# "overrides" replaces only the keys that differ from the template.
+
+files:
+
+  # --- Simple AdMob configs ---
+
+  admobtest.json:
+    template: simple_admob
+    overrides:
+      interId: "ca-app-pub-3940256099942544/1033173712"
+      bannerId: "ca-app-pub-3940256099942544/6300978111"
+      rewardadmob: "ca-app-pub-3940256099942544/5224354917"
+
+  dating.json:
+    template: simple_admob
+    overrides:
+      bannerId2: "ca-app-pub-3940256099942544/"
+
+  yallalive.json:
+    template: simple_admob
+    overrides:
+      bannerId2: "ca-app-pub-3940256099942544/"
+
+  # --- Webview / Native Ads configs ---
+
+  webview.json:
+    template: webview_native_ads
+    overrides:
+      version: "said v12"
+      nativeid1: "ca-app-pub-3940256099942544/22476961101"
+      nativeid2: "ca-app-pub-3940256099942544/22476961102"
+      nativeid3: "ca-app-pub-3940256099942544/22476961103"
+      nativeid4: "ca-app-pub-3940256099942544/22476961104"
+      nativeid5: "ca-app-pub-3940256099942544/22476961105"
+      nativeid6: "ca-app-pub-3940256099942544/22476961106"
+
+  webviewTest.json:
+    template: webview_native_ads
+    overrides:
+      version: "said v12"
+      nativeid1: "ca-app-pub-3940256099942544/22476961101"
+      nativeid2: "ca-app-pub-3940256099942544/22476961102"
+      nativeid3: "ca-app-pub-3940256099942544/22476961103"
+      nativeid4: "ca-app-pub-3940256099942544/22476961104"
+      nativeid5: "ca-app-pub-3940256099942544/22476961105"
+      nativeid6: "ca-app-pub-3940256099942544/22476961106"
+      adsTimer: "1"
+
+  webview_native_ads.json:
+    template: webview_native_ads
+    overrides:
+      version: "Koora"
+      nativeid1: "ca-app-pub-3940256099942544/2247696110"
+      nativeid2: "ca-app-pub-3940256099942544/2247696110"
+      nativeid3: "ca-app-pub-3940256099942544/2247696110"
+      nativeid4: "ca-app-pub-3940256099942544/2247696110"
+      nativeid5: "ca-app-pub-3940256099942544/2247696110"
+      nativeid6: "ca-app-pub-3940256099942544/2247696110"
+      randomNativeid: "1"
+      adsTimer: "01"
+
+  chat_app_json:
+    template: webview_native_ads
+    overrides:
+      version: "Date my Age"
+      admobinter: "ca-app-pub-3940256099942544/"
+      interId: "ca-app-pub-3940256099942544/"
+      adsTimer: "16000000000"
+
+  yacine_tv_webview.json:
+    template: webview_native_ads
+    overrides:
+      version: "Date my Age"
+      admobinter: "ca-app-pub-3940256099942544/"
+      interId: "ca-app-pub-3940256099942544/"
+      adsTimer: "16000000000"
+
+  # --- iOS multi-ad-network configs ---
+
+  ios_Massage_Tips.json:
+    template: ios_multi_ad_network
+    overrides:
+      interId: "ca-app-pub-3940256099942544/2934735716"
+      bannerId: "ca-app-pub-3940256099942544/2934735716"
+
+  ios_Romantic_Message.json:
+    template: ios_multi_ad_network
+    overrides:
+      Frequence: "1"
+      interId: "ca-app-pub-9972771256234787/7826050320"
+      bannerId: "ca-app-pub-9972771256234787/9139131996"
