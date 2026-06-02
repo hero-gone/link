@@ -1,188 +1,192 @@
 #!/bin/bash
 
+set -o pipefail
+
 RED='\033[1;31m'
-
 GRN='\033[1;32m'
-
 BLU='\033[1;34m'
-
 YEL='\033[1;33m'
-
-PUR='\033[1;35m'
-
 CYAN='\033[1;36m'
-
 NC='\033[0m'
 
+error_exit() {
+	echo -e "${RED}ERROR: $1${NC}" >&2
+	exit 1
+}
 
+warn() {
+	echo -e "${YEL}WARNING: $1${NC}" >&2
+}
+
+run_or_fail() {
+	if ! "$@"; then
+		error_exit "Command failed: $*"
+	fi
+}
 
 echo -e "${CYAN}*-------------------*---------------------*${NC}"
-
 echo -e "${YEL}* Check MDM - Skip MDM Auto for MacOS by *${NC}"
-
 echo -e "${RED}*             SKIPMDM.COM                *${NC}"
-
 echo -e "${RED}*            Phoenix Team                *${NC}"
-
 echo -e "${CYAN}*-------------------*---------------------*${NC}"
-
 echo ""
 
 PS3='Please enter your choice: '
-
-options=("Autoypass on Recovery" "Reboot")
+options=("Autobypass on Recovery" "Disable Notification (SIP)" "Disable Notification (Recovery)" "Check MDM Enrollment" "Reboot")
 
 select opt in "${options[@]}"; do
 
 	case $opt in
 
-	"Autoypass on Recovery")
+	"Autobypass on Recovery")
 
-		echo -e "${GRN}Bypass on Recovery"
+		echo -e "${GRN}Bypass on Recovery${NC}"
 
 		if [ -d "/Volumes/Macintosh HD - Data" ]; then
-
-   			diskutil rename "Macintosh HD - Data" "Data"
-
+			if ! diskutil rename "Macintosh HD - Data" "Data"; then
+				error_exit "Failed to rename 'Macintosh HD - Data' to 'Data'"
+			fi
 		fi
 
-		echo -e "${GRN}Create a new user / Tạo User mới"
+		echo -e "${GRN}Create a new user / Tạo User mới${NC}"
+		echo -e "${BLU}Press Enter to continue, Note: Leaving it blank will default to the automatic user / Nhấn Enter để tiếp tục, Lưu ý: có thể không điền sẽ tự động nhận User mặc định${NC}"
 
-        echo -e "${BLU}Press Enter to continue, Note: Leaving it blank will default to the automatic user / Nhấn Enter để tiếp tục, Lưu ý: có thể không điền sẽ tự động nhận User mặc định"
+		echo -e "Enter the username (Default: Apple) / Nhập tên User (Mặc định: Apple)"
+		read -r realName
+		realName="${realName:=Apple}"
 
-  		echo -e "Enter the username (Default: Apple) / Nhập tên User (Mặc định: Apple)"
-
-		read realName
-
-  		realName="${realName:= Apple}"
-
-    	echo -e "${BLUE}Nhận username ${RED}WRITE WITHOUT SPACES / VIẾT LIỀN KHÔNG DẤU ${GRN} (Mặc định: Apple)"
-
-      	read username
-
+		echo -e "${BLU}Enter username WITHOUT SPACES (Default: Apple)${NC}"
+		read -r username
 		username="${username:=Apple}"
 
-  		echo -e "${BLUE}Enter the password (default: 1234) / Nhập mật khẩu (mặc định: 1234)"
+		if [[ "$username" =~ [^a-zA-Z0-9_-] ]]; then
+			error_exit "Username contains invalid characters. Use only letters, numbers, hyphens, and underscores."
+		fi
 
-    	read passw
+		echo -e "${BLU}Enter the password (default: 1234) / Nhập mật khẩu (mặc định: 1234)${NC}"
+		read -r passw
+		passw="${passw:=1234}"
 
-      	passw="${passw:=1234}"
+		dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
 
-		dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default' 
+		if [ ! -d "$dscl_path" ]; then
+			error_exit "Directory service path not found: $dscl_path. Ensure 'Data' volume is mounted."
+		fi
 
-        echo -e "${GREEN}Creating User / Đang tạo User"
+		echo -e "${GRN}Creating User / Đang tạo User${NC}"
 
-  		# Create user
+		run_or_fail dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username"
+		run_or_fail dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UserShell "/bin/zsh"
+		run_or_fail dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" RealName "$realName"
+		run_or_fail dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UniqueID "501"
+		run_or_fail dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" PrimaryGroupID "20"
 
-    	dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username"
+		if ! mkdir -p "/Volumes/Data/Users/$username"; then
+			error_exit "Failed to create home directory: /Volumes/Data/Users/$username"
+		fi
 
-      	dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UserShell "/bin/zsh"
+		run_or_fail dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" NFSHomeDirectory "/Users/$username"
+		run_or_fail dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
+		run_or_fail dscl -f "$dscl_path" localhost -append "/Local/Default/Groups/admin" GroupMembership "$username"
 
-	    dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" RealName "$realName"
+		echo -e "${GRN}User '$username' created successfully${NC}"
 
-	 	dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" RealName "$realName"
+		hosts_file="/Volumes/Macintosh HD/etc/hosts"
+		if [ ! -f "$hosts_file" ]; then
+			error_exit "Hosts file not found: $hosts_file"
+		fi
 
-	    dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UniqueID "501"
+		{
+			echo "0.0.0.0 deviceenrollment.apple.com"
+			echo "0.0.0.0 mdmenrollment.apple.com"
+			echo "0.0.0.0 iprofiles.apple.com"
+		} >> "$hosts_file" || error_exit "Failed to write to hosts file: $hosts_file"
 
-	    dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" PrimaryGroupID "20"
+		echo -e "${GRN}Successfully blocked host / Thành công chặn host${NC}"
 
-		mkdir "/Volumes/Data/Users/$username"
+		if ! touch /Volumes/Data/private/var/db/.AppleSetupDone; then
+			warn "Failed to create .AppleSetupDone marker"
+		fi
 
-	    dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" NFSHomeDirectory "/Users/$username"
+		config_dir="/Volumes/Macintosh HD/var/db/ConfigurationProfiles/Settings"
+		if [ ! -d "$config_dir" ]; then
+			error_exit "Configuration profiles directory not found: $config_dir"
+		fi
 
-	    dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
+		rm -f "$config_dir/.cloudConfigHasActivationRecord" || warn "Could not remove .cloudConfigHasActivationRecord"
+		rm -f "$config_dir/.cloudConfigRecordFound" || warn "Could not remove .cloudConfigRecordFound"
+		touch "$config_dir/.cloudConfigProfileInstalled" || warn "Could not create .cloudConfigProfileInstalled"
+		touch "$config_dir/.cloudConfigRecordNotFound" || warn "Could not create .cloudConfigRecordNotFound"
 
-	    dscl -f "$dscl_path" localhost -append "/Local/Default/Groups/admin" GroupMembership $username
-
-		echo "0.0.0.0 deviceenrollment.apple.com" >>/Volumes/Macintosh\ HD/etc/hosts
-
-		echo "0.0.0.0 mdmenrollment.apple.com" >>/Volumes/Macintosh\ HD/etc/hosts
-
-		echo "0.0.0.0 iprofiles.apple.com" >>/Volumes/Macintosh\ HD/etc/hosts
-
-        echo -e "${GREEN}Successfully blocked host / Thành công chặn host${NC}"
-
-		# echo "Remove config profile"
-
-  	touch /Volumes/Data/private/var/db/.AppleSetupDone
-
-        rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord
-
-	rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound
-
-	touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled
-
-	touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound
-
-	echo -e "${CYAN}------ Autobypass SUCCESSFULLY / Autobypass HOÀN TẤT ------${NC}"
-
-	echo -e "${CYAN}------ Exit Terminal , Reset Macbook and ENJOY ! ------${NC}"
-
+		echo -e "${CYAN}------ Autobypass SUCCESSFULLY / Autobypass HOÀN TẤT ------${NC}"
+		echo -e "${CYAN}------ Exit Terminal, Reset Macbook and ENJOY ! ------${NC}"
 		break
-
 		;;
 
-    "Disable Notification (SIP)")
+	"Disable Notification (SIP)")
 
-    	echo -e "${RED}Please Insert Your Password To Proceed${NC}"
+		echo -e "${RED}Please Insert Your Password To Proceed${NC}"
 
-        sudo rm /var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord
+		config_dir="/var/db/ConfigurationProfiles/Settings"
+		if [ ! -d "$config_dir" ]; then
+			error_exit "Configuration profiles directory not found: $config_dir"
+		fi
 
-        sudo rm /var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound
+		if ! sudo rm -f "$config_dir/.cloudConfigHasActivationRecord"; then
+			error_exit "Failed to remove .cloudConfigHasActivationRecord (check sudo permissions)"
+		fi
+		if ! sudo rm -f "$config_dir/.cloudConfigRecordFound"; then
+			error_exit "Failed to remove .cloudConfigRecordFound"
+		fi
+		if ! sudo touch "$config_dir/.cloudConfigProfileInstalled"; then
+			error_exit "Failed to create .cloudConfigProfileInstalled"
+		fi
+		if ! sudo touch "$config_dir/.cloudConfigRecordNotFound"; then
+			error_exit "Failed to create .cloudConfigRecordNotFound"
+		fi
 
-        sudo touch /var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled
+		echo -e "${GRN}Notifications disabled successfully${NC}"
+		break
+		;;
 
-        sudo touch /var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound
+	"Disable Notification (Recovery)")
 
-        break
+		config_dir="/Volumes/Macintosh HD/var/db/ConfigurationProfiles/Settings"
+		if [ ! -d "$config_dir" ]; then
+			error_exit "Configuration profiles directory not found: $config_dir"
+		fi
 
-        ;;
+		rm -f "$config_dir/.cloudConfigHasActivationRecord" || error_exit "Failed to remove .cloudConfigHasActivationRecord"
+		rm -f "$config_dir/.cloudConfigRecordFound" || error_exit "Failed to remove .cloudConfigRecordFound"
+		touch "$config_dir/.cloudConfigProfileInstalled" || error_exit "Failed to create .cloudConfigProfileInstalled"
+		touch "$config_dir/.cloudConfigRecordNotFound" || error_exit "Failed to create .cloudConfigRecordNotFound"
 
-    "Disable Notification (Recovery)")
-
-        rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord
-
-	rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound
-
-	touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled
-
-	touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound
-
-
-
-        break
-
-        ;;
+		echo -e "${GRN}Notifications disabled successfully (Recovery)${NC}"
+		break
+		;;
 
 	"Check MDM Enrollment")
 
 		echo ""
-
 		echo -e "${GRN}Check MDM Enrollment. Error is success${NC}"
-
 		echo ""
-
 		echo -e "${RED}Please Insert Your Password To Proceed${NC}"
-
 		echo ""
 
-		sudo profiles show -type enrollment
-
+		if ! sudo profiles show -type enrollment; then
+			echo -e "${GRN}No enrollment profile found (this means MDM is not active)${NC}"
+		fi
 		break
-
 		;;
 
-	"Exit")
+	"Reboot")
 
- 		echo "Rebooting..."
-
+		echo "Rebooting..."
 		reboot
-
 		break
-
 		;;
 
-	*) echo "Invalid option $REPLY" ;;
+	*) echo -e "${RED}Invalid option $REPLY${NC}" ;;
 
 	esac
 
