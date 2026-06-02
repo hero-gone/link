@@ -62,9 +62,19 @@ select opt in "${options[@]}"; do
 
 		username="${username:=Apple}"
 
+		if [[ "$username" =~ [^a-zA-Z0-9_.-] ]]; then
+			echo -e "${RED}Error: Username contains invalid characters. Only alphanumeric, dots, hyphens, and underscores are allowed.${NC}"
+			exit 1
+		fi
+
+		if [[ "$realName" =~ [\;\&\|\`\$\(] ]]; then
+			echo -e "${RED}Error: Real name contains invalid characters.${NC}"
+			exit 1
+		fi
+
   		echo -e "${BLUE}Enter the password (default: 1234) / Nhập mật khẩu (mặc định: 1234)"
 
-    	read passw
+    	read -s passw
 
       	passw="${passw:=1234}"
 
