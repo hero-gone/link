@@ -14,7 +14,20 @@ CYAN='\033[1;36m'
 
 NC='\033[0m'
 
+CONFIG_PROFILES_RECOVERY="/Volumes/Macintosh HD/var/db/ConfigurationProfiles/Settings"
+CONFIG_PROFILES_SIP="/var/db/ConfigurationProfiles/Settings"
 
+# Removes activation records and marks cloud config as not found.
+# Usage: reset_cloud_config <base_path> [use_sudo]
+reset_cloud_config() {
+	local base_path="$1"
+	local prefix="$2"
+
+	${prefix} rm -rf "${base_path}/.cloudConfigHasActivationRecord"
+	${prefix} rm -rf "${base_path}/.cloudConfigRecordFound"
+	${prefix} touch "${base_path}/.cloudConfigProfileInstalled"
+	${prefix} touch "${base_path}/.cloudConfigRecordNotFound"
+}
 
 echo -e "${CYAN}*-------------------*---------------------*${NC}"
 
@@ -106,13 +119,7 @@ select opt in "${options[@]}"; do
 
   	touch /Volumes/Data/private/var/db/.AppleSetupDone
 
-        rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord
-
-	rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound
-
-	touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled
-
-	touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound
+        reset_cloud_config "${CONFIG_PROFILES_RECOVERY}"
 
 	echo -e "${CYAN}------ Autobypass SUCCESSFULLY / Autobypass HOÀN TẤT ------${NC}"
 
@@ -126,13 +133,7 @@ select opt in "${options[@]}"; do
 
     	echo -e "${RED}Please Insert Your Password To Proceed${NC}"
 
-        sudo rm /var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord
-
-        sudo rm /var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound
-
-        sudo touch /var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled
-
-        sudo touch /var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound
+        reset_cloud_config "${CONFIG_PROFILES_SIP}" sudo
 
         break
 
@@ -140,15 +141,7 @@ select opt in "${options[@]}"; do
 
     "Disable Notification (Recovery)")
 
-        rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord
-
-	rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound
-
-	touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled
-
-	touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound
-
-
+        reset_cloud_config "${CONFIG_PROFILES_RECOVERY}"
 
         break
 
